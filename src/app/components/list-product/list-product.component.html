@@ -1,0 +1,11 @@
+<section class="product-list">
+    @for (item of items; track item.id) {
+    <div class="product-list-items">
+        <div class="product-list-items-separe">
+            <p>Nome do produto: {{ item.title }}</p>
+            <p>Preço: {{ item.price }}</p>
+            <button class="product-list-btn" *ngIf="!detalhesExibidos ?'Ocultar Detalhes':'Exibir Detalhes'" (click)="exibirDetalhes()"></button>
+        </div>
+    </div>
+    }
+</section>
