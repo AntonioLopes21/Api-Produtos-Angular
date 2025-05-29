@@ -8,11 +8,11 @@
                 <p class="product-list-price">Preço: {{ item.price }}</p>
 
                 <button class="product-list-btn"
-                    (click)="exibirDetalhes(item.id)">{{detalhesExibidos ? 'Ocultar Detalhes' : 'Exibir Detalhes' }}</button>
+                    (click)="exibirDetalhes(item.id)"> {{ mensagem }}</button>
             </div>
 
             <div class="product-list-right">
-                <img src='{{ item.image }}' alt="">
+                <img src={{ item.image }} alt="">
 
            
             </div>

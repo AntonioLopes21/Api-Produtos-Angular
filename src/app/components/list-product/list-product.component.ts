@@ -25,6 +25,7 @@ export class ListProductComponent implements OnInit {
   items: Produto[] = [];
   detalhesExibidos: boolean = false;
   idSelecionado: number | null = null;
+  mensagem : string = 'Exibir Detalhes'
 
   constructor(private listProductService: ListProductServiceService) { }
 
@@ -41,6 +42,12 @@ export class ListProductComponent implements OnInit {
     
     this.idSelecionado = this.idSelecionado === id ? null : id;
     this.detalhesExibidos = !this.detalhesExibidos
+
+    if(!this.detalhesExibidos && this.idSelecionado === id) {
+      this.mensagem = 'Exibir Detalhes'
+    } else {
+      this.mensagem = 'Ocultar Detalhes'
+    }
   }
 
 
