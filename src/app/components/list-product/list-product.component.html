@@ -1,10 +1,26 @@
 <section class="product-list">
-    @for (item of items; track item.id) {
+    @for (item of items; track item) {
     <div class="product-list-items">
         <div class="product-list-items-separe">
-            <p>Nome do produto: {{ item.title }}</p>
-            <p>Preço: {{ item.price }}</p>
-            <button class="product-list-btn" *ngIf="!detalhesExibidos ?'Ocultar Detalhes':'Exibir Detalhes'" (click)="exibirDetalhes()"></button>
+            
+            <div class="product-list-left">
+                <p>{{ item.title }}</p>
+                <p class="product-list-price">Preço: {{ item.price }}</p>
+
+                <button class="product-list-btn"
+                    (click)="exibirDetalhes(item.id)">{{detalhesExibidos ? 'Ocultar Detalhes' : 'Exibir Detalhes' }}</button>
+            </div>
+
+            <div class="product-list-right">
+                <img src='{{ item.image }}' alt="">
+            </div>
+
+            @if(idSelecionado === item.id) {
+                <p class="descricao">
+                    {{ item.description }}
+                </p>
+            }
+
         </div>
     </div>
     }
