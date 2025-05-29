@@ -1,24 +1,32 @@
 .product-list {
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .product-list-items {
         padding: 5%;
-        display: flex;
-        flex-direction: column;
-        height: auto;
         width: 100vh;
-        gap: 1rem;
     }
+
+    .product-list-right {
+        display: flex;
+        flex-direction: row !important;
+        font-size: 1rem !important;
+        justify-items: right;
+    }
+
+    
 
     .product-list-left,
     .product-list-right {
-        height: auto;
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;
         justify-content: center;
         font-size: 1.5rem;
         font-weight: 700;
         text-align: left;
+
         img {
             width: 10rem;
         }
@@ -30,10 +38,6 @@
         padding: 2%;
         display: flex;
         justify-content: space-between;
-
-        .product-list-price {
-            align-self: flex-start;
-        }
 
         .product-list-btn {
             width: 10rem;
@@ -56,6 +60,58 @@
             padding: 1%;
         }
 
+
+    }
+}
+
+@media (max-width : 830px) {
+    .product-list {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        .product-list-items {
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+        }
+
+    }
+}
+
+@media (max-width : 520px) {
+    .product-list {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        .product-list-items {
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            gap: 1rem;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-list-items-separe {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .product-list-left, .product-list-btn, .product-list-right {
+            align-items: center;
+            margin: auto;
+            text-align: center;
+        }
         
+        .product-list-right {
+            margin: auto;
+        }
+
     }
 }

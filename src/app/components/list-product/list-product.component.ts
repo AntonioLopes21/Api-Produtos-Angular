@@ -38,6 +38,7 @@ export class ListProductComponent implements OnInit {
 
 
   exibirDetalhes(id: number) {
+    
     this.idSelecionado = this.idSelecionado === id ? null : id;
     this.detalhesExibidos = !this.detalhesExibidos
   }
